@@ -152,6 +152,8 @@ class WikiEnv(gym.Env):
       self.obs = f"Episode finished, reward = {reward}\n"
     elif action.startswith("think[") and action.endswith("]"):
       self.obs = "Nice thought."
+    elif action.startswith("check[") and action.endswith("]"):
+      self.obs = "double checking."
     else:
       self.obs = "Invalid action: {}".format(action)
 
